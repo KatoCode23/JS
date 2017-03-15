@@ -1,4 +1,4 @@
-//Every Other Index
+//Numbers Only
 
 function numbersOnly(originalArray){
   var numbersOnlyArray = [];
@@ -12,3 +12,4 @@ function numbersOnly(originalArray){
 }
 
 console.log(numbersOnly(['Snow', 2, 'Babyen', 88, 'Dino', 9, 'Kato', 23, 'Kara', 29]));
+console.log(numbersOnly([3, 2, 4, 88, 26, 9, 'Kato' , 23,13, 29,12,15]));
