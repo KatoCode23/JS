@@ -67,3 +67,22 @@ FirstPitch.prototype.whatKindOfPitch = function () {
 
 var startToTheGame = new FirstPitch('Fastball', 95);
 startToTheGame.whatKindOfPitch();
+
+function battersCount(balls, strikes) {
+  this.strikes = strikes;
+  this.balls = balls;
+
+  if(strikes >= 3 ){
+    console.log('Strike 3! You are OUT!')
+  }
+  else if(balls >= 4){
+    console.log('Ball 4. Take your base');
+  }
+  else{
+    console.log('Get ready for the next pitch');
+  }
+}
+
+battersCount(2,2);
+battersCount(2,3);
+battersCount(4,2);
