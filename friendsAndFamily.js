@@ -1,15 +1,18 @@
-function friendsAndFamily (originalArray) {
-friendsAndFamilyArray = [];
+function friendsAndFamily (originalArray, acceptedFriends) {
+var friendsAndFamilyArray = [];
+acceptedFriends = ['Kalen', 'Eleen', 'Sina', 'Tara'];
+acceptedFriendsLength = acceptedFriends.length;
+for(var i = 0; i < acceptedFriendsLength; i++ ){
+  var accepted = acceptedFriends[i];
+  console.log(accepted);
+}
 var originalArrayLength = originalArray.length;
-var kalen = 'Kalen';
-var eleen = 'Eleen';
-var sina = 'Sina';
-var tara = 'Tara';
-for (var i = 0; i < originalArrayLength; i++){
-  if(originalArray[i] === kalen || originalArray[i] === eleen || originalArray[i] === sina || originalArray[i] === tara){
-    friendsAndFamilyArray.push(originalArray[i]);
+for(var i = 0; i < originalArrayLength; i++){
+  if(originalArray[i] === accepted){
+    friendsAndFamilyArray.push(accepted);
   }
 }
+
 
 return 'Here is my friends and family array: ' + friendsAndFamilyArray;
 }
