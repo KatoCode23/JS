@@ -86,3 +86,68 @@ function battersCount(balls, strikes) {
 battersCount(2,2);
 battersCount(2,3);
 battersCount(4,2);
+
+var basehit = {
+    name: 'Single',
+    base: '1st',
+    commentary: function() {
+        console.log(this.name + ' is hit and whomever has reached ' + this.base + ' base.');
+    }
+};
+
+basehit.commentary();
+var double = Object.create(basehit, {
+    name: {value: 'Double'},
+    base: {value: '2nd'}
+});
+
+double.commentary();
+
+var triple = Object.create(basehit, {
+  name: {value: 'Triple'},
+  base: {value: '3rd'}
+});
+
+triple.commentary();
+
+var homerun = {
+  name: 'Home Run!!!',
+  base: 'Home Plate',
+  run: 1,
+  dialogue: function () {
+    console.log(this.name + ' hit by whomever, touch ' + this.base + '!' );
+  }
+}
+homerun.dialogue();
+
+var twoRunHomeRun = Object.create(homerun, {
+  name: {value: 'Two Run Blast'},
+  base: {value: 'Home Plate Twice'},
+  run: {value: 2}
+});
+
+twoRunHomeRun.dialogue();
+
+var threeRunHomeRun = Object.create(homerun, {
+  name: {value: 'Three Run Blast'},
+  base: {value: 'Home Plate Three Times'},
+  run: {value: 3}
+});
+
+threeRunHomeRun.dialogue();
+
+var grandSlam = Object.create(homerun, {
+  name: {value: 'Grand Slam!!!'},
+  base: {value: 'Home Plate 4 Times!!!!'},
+  run: {value: 4}
+});
+
+grandSlam.dialogue();
+
+function score(home){
+  this.home = home;
+  grandSlam.dialogue();
+  home += 4;
+  console.log(home);
+}
+score(2);
